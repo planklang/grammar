@@ -6,10 +6,9 @@ arguments = { literal }
 property = identifier, literal
 
 keyword = "plot"
-		| "default"
-		| "overwrite" | "ow"
-		| "axis"
-
+	| "default"
+	| "overwrite" | "ow"
+	| "axis"
 
 literal = ? identifier ? | variable | string | ? number ? | tuple | list
 variable = "$", ? identifier ?
