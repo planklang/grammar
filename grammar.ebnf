@@ -17,6 +17,6 @@ string  = ?  delimited by ", ', or ` ?
 tuple = "(", [ literal, [{ ",", [ literal ] }] ], ")"
 list = "[", [ literal, [{ ",", [ literal ] }] ], "]"
 
-figure-delimiter = "--", { "-" }
+figure-delimiter = ? "---" | "----" | "-----" | etc ?
 statement-delimiter = "\n" | ";;"
 property-delimiter = "|"
