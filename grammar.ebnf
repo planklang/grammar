@@ -18,5 +18,5 @@ tuple = "(", [ literal, [{ literal }] ], ")"
 list = "[", [ literal, [{ literal }] ], "]";
 
 figure-delimiter = ? "---" | "----" | "-----" | etc ?;
-statement-delimiter = "\n" | ";;";
+statement-delimiter = ( "\n" - "|" ) | ";;";
 property-delimiter = "|";
