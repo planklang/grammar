@@ -1,22 +1,22 @@
-top-level = [ figure, [{ figure-delimiter, [figure] }] ]
-figure = [ statement, [{ statement-delimiter, [ statement ] }] ]
-statement = keyword, [ arguments ], [{ property-delimiter, property }]
+top-level = [ figure, [{ figure-delimiter, [figure] }] ];
+figure = [ statement, [{ statement-delimiter, [ statement ] }] ];
+statement = keyword, [ arguments ], [{ property-delimiter, property }];
 
-arguments = { literal }
-property = identifier, literal
+arguments = { literal };
+property = identifier, literal;
 
 keyword = "plot"
 	| "default"
 	| "overwrite" | "ow"
-	| "axis"
+	| "axis";
 
-literal = ? identifier ? | variable | string | ? number ? | tuple | list
-variable = "$", ? identifier ?
-string  = ?  delimited by ", ', or ` ?
+literal = ? identifier ? | variable | string | ? number ? | tuple | list;
+variable = "$", ? identifier ?;
+string  = ?  delimited by ", ', or ` ?;
 tuple = "(", [ literal, [{ literal }] ], ")"
-	| literal, [{ literal }]
-list = "[", [ literal, [{ literal }] ], "]"
+	| literal, [{ literal }];
+list = "[", [ literal, [{ literal }] ], "]";
 
-figure-delimiter = ? "---" | "----" | "-----" | etc ?
-statement-delimiter = "\n" | ";;"
-property-delimiter = "|"
+figure-delimiter = ? "---" | "----" | "-----" | etc ?;
+statement-delimiter = "\n" | ";;";
+property-delimiter = "|";
