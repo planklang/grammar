@@ -4,19 +4,21 @@ statement = keyword, [ arguments ], [{ property-delimiter, property }];
 
 arguments = tuple;
 property = ? identifier ?, [ arguments ];
-comment = "#", [ literal ]
+comment = "#", [ atom ]
 
+atom = literal | tuple | list
 keyword = "plot"
 	| "default"
 	| "overwrite" | "ow"
 	| "axis";
 
-literal = ? identifier ? | variable | string | ? number ? | tuple | list;
+tuple = "(", [ atom, [{ atom }] ], ")"
+	| atom, [{ atom }];
+list = "[", [ atom, [{ atom }] ], "]";
+
+literal = ? identifier ? | variable | string | ? number ?;
 variable = "$", ? identifier ?;
 string  = ?  delimited by ", ', or ` ?;
-tuple = "(", [ literal, [{ literal }] ], ")"
-	| literal, [{ literal }];
-list = "[", [ literal, [{ literal }] ], "]";
 
 figure-delimiter = ? /--[-]+/ ?;
 statement-delimiter = ( "\n" - "|" ) | ";;";
