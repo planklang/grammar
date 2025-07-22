@@ -50,6 +50,8 @@ Plank uses `;;` to separate two instructions.
 
 We are currently working on this.
 
+The EBNF file describing the grammar is available [here](https://github.com/planklang/grammar/blob/main/grammar.ebnf).
+
 ## Learn
 
 We are currently working on this.
