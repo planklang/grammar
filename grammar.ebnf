@@ -18,6 +18,6 @@ tuple = "(", [ literal, [{ literal }] ], ")"
 	| literal, [{ literal }];
 list = "[", [ literal, [{ literal }] ], "]";
 
-figure-delimiter = ? "---" | "----" | "-----" | etc ?;
+figure-delimiter = ? /--[-]+/ ?;
 statement-delimiter = ( "\n" - "|" ) | ";;";
 property-delimiter = "|";
