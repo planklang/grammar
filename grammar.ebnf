@@ -13,8 +13,9 @@ keyword = "plot"
 literal = ? identifier ? | variable | string | ? number ? | tuple | list
 variable = "$", ? identifier ?
 string  = ?  delimited by ", ', or ` ?
-tuple = "(", [ literal, [{ ",", [ literal ] }] ], ")"
-list = "[", [ literal, [{ ",", [ literal ] }] ], "]"
+tuple = "(", [ literal, [{ literal }] ], ")"
+	| literal, [{ literal }]
+list = "[", [ literal, [{ literal }] ], "]"
 
 figure-delimiter = ? "---" | "----" | "-----" | etc ?
 statement-delimiter = "\n" | ";;"
