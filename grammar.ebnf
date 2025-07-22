@@ -2,8 +2,8 @@ top-level = [ figure, [{ figure-delimiter, [figure] }] ];
 figure = [ statement, [{ statement-delimiter, [ statement ] }] ];
 statement = keyword, [ arguments ], [{ property-delimiter, property }];
 
-arguments = { literal };
-property = identifier, literal;
+arguments = [ tuple ];
+property = identifier, arguments;
 
 keyword = "plot"
 	| "default"
