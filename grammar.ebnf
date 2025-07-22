@@ -1,0 +1,22 @@
+top-level = [ figure, [{ figure-delimiter, [figure] }] ]
+figure = [ statement, [{ statement-delimiter, [ statement ] }] ]
+statement = keyword, [ arguments ], [{ property-delimiter, property }]
+
+arguments = { ? literal ? }
+property = identifier, ? literal ?
+
+keyword = "plot"
+		| "default"
+		| "overwrite" | "ow"
+		| "axis"
+
+
+literal = ? identifier ? | variable | string | ? number ? | tuple | list
+variable = "$", ? identifier ?
+string  = ?  delimited by ", ', or ` ?
+tuple = "(", [ literal, [{ ",", [ literal ] }] ], ")"
+list = "[", [ literal, [{ ",", [ literal ] }] ], "]"
+
+figure-delimiter = "--", { "-" }
+statement-delimiter = "\n" | ";;"
+property-delimiter = "|"
