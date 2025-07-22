@@ -4,6 +4,7 @@ statement = keyword, [ arguments ], [{ property-delimiter, property }];
 
 arguments = [ tuple ];
 property = identifier, arguments;
+comment = "#", [ literal ]
 
 keyword = "plot"
 	| "default"
