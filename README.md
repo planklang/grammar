@@ -79,6 +79,27 @@ Every item must have the same type.
 
 An atom is the supertype including number, string, identifier, tuple and list.
 
+### Statement
+
+Each description is a statement in PlankLang.
+A statement must start with a keyword.
+The current list of keywords and their usage will be described in the specification.
+
+A keyword must start a new line or be added after the statemenent delimiter (`;;`).
+It can take an argument.
+An argument is a tuple.
+
+In this example
+```
+axis x "Label"
+```
+`axis` is the keyword, `x` is an identifier and `"Label"` is a string. 
+The implicit tuple `(x "Label")` is the argument of `axis`.
+You can also write
+```
+axis (x "Label")
+```
+
 ## License
 
 This repository is licensed under CC-BY-SA 4.0.
