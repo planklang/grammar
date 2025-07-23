@@ -11,11 +11,11 @@ This is a simple Plank script.
 axis x [0 10] "Label X"
 axis y [-5 100] "Label Y"
 
-plot x -> x^2
+plot "x -> x^2"
 | color 0 0 0 1 # RGBA <- comment
 | width 1
 
-plot x -> exp(x)
+plot "exp(x)" # if the argument "x ->" is omitted, it is implicitly deduced
 | color 0 0 0 1
 | width 1
 ```
@@ -30,12 +30,12 @@ Firstly, it defines how the grid works.
 
 Then, it defines what populates the plot.
 
-`plot x -> x^2` is the mathematical function $x\mapsto x^2$.
+`plot "x -> x^2"` is the mathematical function $x\mapsto x^2$.
 This will populate the plot.
 `| color 0 0 0 1` sets the color of the graph (RGBA).
 `| width 1` sets the width of the line.
 
-`plot x -> exp(x)` is the mathematical function $x\mapsto\exp(x)$.
+`plot "exp(x)"` is the mathematical function $x\mapsto\exp(x)$.
 This will also populate the plot.
 `| color 0 0 0 1` sets the color of the graph (RGBA).
 `| width 1` sets the width of the line.
