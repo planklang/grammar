@@ -6,7 +6,7 @@ List of keywords and their usage in PlankLang.
 
 `axis` modifies how the targetted axis works.
 
-Syntaxe:
+Syntax:
 ```
 axis <identifier: target> [string: label] [number array: range]
 ```
@@ -23,4 +23,23 @@ axis x "X axis" # target the axis x and set its label to "X Axis"
 axis y [0 10] # target the axis y and set its minimum to 0 and its maximum to 10
 
 axis y "Y Axis" [0 10] # target the axis y and set its minimum to 0, its maximum to 10 and its label to "Y Axis"
+```
+
+## Plot
+
+`plot` populates the plot
+
+Syntax:
+```
+plot <string: function>
+```
+- `function` is the mathematical function to use. It must follow this syntax: `arg1 -> expression` where expression is a mathematical expression using `arg1` as a variable. If `arg1 ->` is omitted, `x` is implicitly deduced to be the variable.
+
+Example:
+```
+plot "x -> x^2" # populate the plot with the quadratic function
+
+plot "1/x"
+
+plot "3x!^exp(x)/2" # LaTeX equivalent: $\frac{3x!^{\exp(x)}}{2}$
 ```
