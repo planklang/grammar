@@ -43,7 +43,7 @@ This will also populate the plot.
 Finally, the plot is rendered.
 
 You can also write this script in one line:
-`axis x [0, 10] "Label X";; axis y [-5, 100] "Label Y";; plot x -> x^2 | color 0 0 0 1 | width 1;; plot x -> exp(x) | color 0 0 0 1 | width 1`. 
+`axis x [0, 10] "Label X";; axis y [-5, 100] "Label Y";; plot "x -> x^2" | color 0 0 0 1 | width 1;; plot "exp(x)" | color 0 0 0 1 | width 1`. 
 Plank uses `;;` to separate two instructions.
 
 ## Specification
@@ -140,12 +140,12 @@ For example,
 ```
 axis x "Label"
 
-plot x -> x^2
+plot "x^2"
 | color 0 0 0 1
 ```
 could be
 ```
-axis x "Label";; plot x -> x^2 | color 0 0 0 1
+axis x "Label";; plot "x^2" | color 0 0 0 1
 ```
 
 ## License
