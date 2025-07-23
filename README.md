@@ -128,6 +128,26 @@ axis x "Label"
 This modifier modifies the label of the keyword.
 Thus, the label of this axis will be `"Label 2"` and not `"Label"`, because a modifier always overrides previous properties.
 
+### One line
+
+Every Plank script can be written in one line.
+
+Rules to turn a script into a one line:
+1. separate each statement with the statement delimiter `;;`
+2. replace every line break by a space
+
+For example,
+```
+axis x "Label"
+
+plot x -> x^2
+| color 0 0 0 1
+```
+could be
+```
+axis x "Label";; plot x -> x^2 | color 0 0 0 1
+```
+
 ## License
 
 This repository is licensed under CC-BY-SA 4.0.
