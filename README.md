@@ -64,18 +64,42 @@ It defines how visually it must look like.
 ### Types
 
 Numbers and strings (delimited by `"`, by `'` or by \`) are supported.
+```
+1
+1.2
+.5 # equivalent of 0.5
+
+"string 1"
+'string 2'
+`string 3`
+```
 
 PlankLang uses a special type called *identifier* that is a string without quotes and without spaces.
+```
+x
+
+color
+```
 
 A tuple is a finished group of numbers, strings, identifiers, tuples or lists.
-It is between an opening square brackets and a closing parenthesis (`(` and `)`).
+It is between an opening parenthesis and a closing parenthesis (`(` and `)`).
 These are optional if the tuple is not in a tuple.
 Each item is separated by a space.
+```
+(1 2 3 "hello")
+
+1 2 3 "hello" # without parenthesis
+```
 
 A list is a group of numbers, strings, identifiers, tuples or lists.
 It is between an opening square brackets and a closing square brackets (`[` and `]`).
 Each item is separated by a space.
 Every item must have the same type.
+```
+[1 2 3]
+
+["a" "b" "c"]
+```
 
 An atom is the supertype including number, string, identifier, tuple and list.
 
