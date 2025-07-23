@@ -83,7 +83,7 @@ An atom is the supertype including number, string, identifier, tuple and list.
 
 Each description is a statement in PlankLang.
 A statement must start with a keyword.
-The current list of keywords and their usage will be described in the specification.
+The current list of keywords is described [here](keywords.md).
 
 A keyword must start a new line or be added after the statemenent delimiter (`;;`).
 It can take an argument.
