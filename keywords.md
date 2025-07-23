@@ -27,7 +27,7 @@ axis y "Y Axis" [0 10] # target the axis y and set its minimum to 0, its maximum
 
 ## Plot
 
-`plot` populates the plot
+`plot` populates the plot.
 
 Syntax:
 ```
@@ -42,4 +42,24 @@ plot "x -> x^2" # populate the plot with the quadratic function
 plot "1/x"
 
 plot "3x!^exp(x)/2" # LaTeX equivalent: $\frac{3x!^{\exp(x)}}{2}$
+```
+
+## Default
+
+`default` modifies the default values of modifiers.
+
+Syntax:
+```
+default <identifier: target> <tuple: value>
+```
+- `target` is the modifier to edit
+- `value` is the value to use
+
+Example:
+```
+default color (0 0 0 1)
+
+default color (255 0 0 1)
+
+default color (0 0 0 .5)
 ```
