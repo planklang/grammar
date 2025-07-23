@@ -8,8 +8,8 @@ It aims to be simple, straightforward, readable, intuitive and modular.
 This is a simple Plank script.
 
 ```plank
-axis x [0, 10] "Label X"
-axis y [-5, 100] "Label Y"
+axis x [0 10] "Label X"
+axis y [-5 100] "Label Y"
 
 plot x -> x^2
 | color 0 0 0 1 # RGBA <- comment
@@ -22,11 +22,11 @@ plot x -> exp(x)
 
 Firstly, it defines how the grid works.
 
-`axis x [0, 10] "Label X"` describes how the X axis works.
-`[0, 10]` is the range of the axis and `"Label X"` is its label.
+`axis x [0 10] "Label X"` describes how the X axis works.
+`[0 10]` is the range of the axis and `"Label X"` is its label.
 
-`axis y [-5, 100] "Label Y"` describes how the Y axis works.
-`[-5, 100]` is the range of the axis and `"Label Y"` is its label.
+`axis y [-5 100] "Label Y"` describes how the Y axis works.
+`[-5 100]` is the range of the axis and `"Label Y"` is its label.
 
 Then, it defines what populates the plot.
 
