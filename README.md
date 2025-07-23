@@ -100,6 +100,34 @@ You can also write
 axis (x "Label")
 ```
 
+### Modifiers
+
+A modifier modifies how a keyword works.
+It is always in a statement.
+Each keyword has its own modifiers.
+The current list of keywords with their modifiers and their usage will be described in the specification.
+
+A modifier is always placed after a pipe (`|`).
+It can take an argument.
+An argument is a tuple.
+
+A modifier always overrides previous properties.
+
+In this example
+```
+axis x "Label"
+| label "Label 2"
+```
+`|` is the pipe indicating that the next word is a modifier, `label`  is the modifier and `"Label 2"` is a string.
+The implicit tuple `("Label 2")` is the argument of `label`.
+You can also write
+```
+axis x "Label"
+| label ("Label 2")
+```
+This modifier modifies the label of the keyword.
+Thus, the label of this axis will be `"Label 2"` and not `"Label"`, because a modifier always overrides previous properties.
+
 ## License
 
 This repository is licensed under CC-BY-SA 4.0.
