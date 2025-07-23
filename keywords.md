@@ -66,7 +66,7 @@ default color (0 0 0 .5)
 
 ## Overwrite
 
-`overwrite` (or `ow`) modifies the default value of the modifier for next call in the current context.
+`overwrite` (or `ow`) modifies the default value of the modifier for every next call in the current context.
 
 Syntax:
 ```
