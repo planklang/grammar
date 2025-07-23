@@ -63,3 +63,26 @@ default color (255 0 0 1)
 
 default color (0 0 0 .5)
 ```
+
+## Overwrite
+
+`overwrite` (or `ow`) modifies the default value of the modifier for next call in the current context.
+
+Syntax:
+```
+overwrite <identifier: target> <tuple: value>
+
+ow <identifier: target> <tuple: value>
+```
+- `target` is the modifier to edit
+- `value` is the value to use
+
+Example:
+```
+overwrite color (0 0 0 1)
+
+ow color (255 0 0 1)
+
+ow color (0 0 0 .5)
+```
+
