@@ -56,6 +56,29 @@ The EBNF file describing the grammar is available [here](https://github.com/plan
 
 We are currently working on this.
 
+### Goal
+
+A Plank script describes only one plot.
+It defines how visually it must look like.
+
+### Types
+
+Numbers and strings (delimited by `"`, by `'` or by `\``) are supported.
+
+PlankLang uses a special type called *identifier* that is a string without quotes.
+
+A tuple is a finished group of numbers, strings, identifiers, tuples or lists.
+It is between an opening square brackets and a closing parenthesis (`(` and `)`).
+These are optional if the tuple is not in a tuple.
+Each item is separated by a space.
+
+A list is a group of numbers, strings, identifiers, tuples or lists.
+It is between an opening square brackets and a closing square brackets (`[` and `]`).
+Each item is separated by a space.
+Every item must have the same type.
+
+An atom is the supertype including number, string, identifier, tuple and list.
+
 ## License
 
 This repository is licensed under CC-BY-SA 4.0.
