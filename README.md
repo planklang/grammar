@@ -63,7 +63,7 @@ It defines how visually it must look like.
 
 ### Types
 
-Numbers and strings (delimited by `"`, by `'` or by `\``) are supported.
+Numbers and strings (delimited by `"`, by `'` or by \`) are supported.
 
 PlankLang uses a special type called *identifier* that is a string without quotes.
 
