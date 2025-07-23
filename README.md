@@ -65,7 +65,7 @@ It defines how visually it must look like.
 
 Numbers and strings (delimited by `"`, by `'` or by \`) are supported.
 
-PlankLang uses a special type called *identifier* that is a string without quotes.
+PlankLang uses a special type called *identifier* that is a string without quotes and without spaces.
 
 A tuple is a finished group of numbers, strings, identifiers, tuples or lists.
 It is between an opening square brackets and a closing parenthesis (`(` and `)`).
