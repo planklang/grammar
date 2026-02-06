@@ -17,7 +17,7 @@ let f: x, y -> x^y
 let fib: x
 | when x = 0 -> 0
 | when x = 1 -> 1
-| when x > 0 -> fib(x-1) + fib(x-2)
+| when x > 1 -> fib(x-1) + fib(x-2)
 
 # display the results
 1+x # prints 3
@@ -37,7 +37,7 @@ let x = 2
 ```
 You can also oneline functions!
 ```plank
-let fib: x when x = 0 -> 0 | when x = 1 -> 1 | when x > 0 -> fib(x-1) + fib(x-2)
+let fib: x | when x = 0 -> 0 | when x = 1 -> 1 | when x > 0 -> fib(x-1) + fib(x-2)
 ```
 
 ## Specification
