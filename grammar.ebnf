@@ -1,25 +1,21 @@
-top-level = [ figure, [{ figure-delimiter, [figure] }] ];
-figure = [ statement, [{ statement-delimiter, [ statement ] }] ];
-statement = keyword, [ arguments ], [{ property-delimiter, property }];
+statements = [ statement, { statement-delimiter, [ statement ] } ];
+statement = expr | define;
 
-arguments = tuple;
-property = ? identifier ?, [ arguments ];
-comment = "#", [ atom ]
+define-variable = "let", identifier, "=", expr;
+define-function = "let", identifier, ":", variables, "->", expr;
+define = define-variable | define-function;
 
-atom = literal | tuple | list
-keyword = "plot"
-	| "default"
-	| "overwrite" | "ow"
-	| "axis";
+variables = identifier, { ",", identifier };
 
-tuple = "(", [ atom, [{ atom }] ], ")"
-	| atom, [{ atom }];
-list = "[", [ atom, [{ atom }] ], "]";
+expr = term, [ ( "+" | "-" ) expr ];
+term = factor, [ ( "*" | "/" ), term ];
+factor = [ "-" ], par;
+par = ( "(", expr, ")" ) | number | identifier;
 
-literal = ? identifier ? | variable | string | ? number ?;
-variable = "$", ? identifier ?;
-string  = ?  delimited by ", ', or ` ?;
+number-int = ? [0-9_]+ ?;
+number-point = ? ([0-9_]*)?\.[0-9_]+ ?;
+number = number-int | number-point;
 
-figure-delimiter = ? /--[-]+/ ?;
-statement-delimiter = ( "\n" - "|" ) | ";;";
-property-delimiter = "|";
+identifier = ? [a-zA-Z][a-zA-Z_]* ?;
+
+statement-delimiter = "\n" | ";;";
