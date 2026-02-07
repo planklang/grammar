@@ -1,26 +1,28 @@
-statements = [ statement, { statement-delimiter, [ statement ] } ];
+statements = [ [statement-delimiter], statement, { statement-delimiter, [ statement ] } ];
 statement = expr | define;
 
 define-variable = "let", identifier, "=", expr;
 define-function = "let", identifier, ":", variables, function-expr | ( { function-clause, function-expr } );
 define = define-variable | define-function;
 
-function-clause = "|", "when", expr-bool;
+function-clause = "|", "when", expr;
 function-expr = "->", expr;
 
 variables = identifier, { ",", identifier };
 
-expr = term, [ ( "+" | "-" ) expr ];
+expr-calc = term, [ ( "+" | "-" ) expr-calc ];
 term = factor, [ ( "*" | "/" ), term ];
 factor = [ "-" ], par;
 par = ( "(", expr, ")" ) | number | identifier;
 
 expr-bool = expr, ( "=" | ">" | "<" | ">=" | "<=" | "!=" ), expr;
 
-number-int = ? [0-9_]+ ?;
-number-point = ? ([0-9_]*)?\.[0-9_]+ ?;
+expr = expr-calc | expr-bool;
+
+number-int = ? /[0-9_]+/ ?;
+number-point = ? /([0-9_]*)?\.[0-9_]+/ ?;
 number = number-int | number-point;
 
-identifier = ? [a-zA-Z][a-zA-Z_]* ?;
+identifier = ? /[a-zA-Z][a-zA-Z_]*/ ?;
 
-statement-delimiter = "\n" | ";;";
+statement-delimiter = ? /\n+/ ? | ? /(;;)+/ ?;
