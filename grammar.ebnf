@@ -25,7 +25,7 @@ expr-bool = expr, bool-operator, expr;
 expr = expr-calc | expr-bool;
 
 number-int = ? /[0-9_]+/ ?;
-number-point = ? /([0-9_]*)?\.[0-9_]+/ ?;
+number-point = ? /[0-9_]*\.[0-9_]+/ ?;
 number = number-int | number-point;
 
 identifier = ? /[a-zA-Z][a-zA-Z_]*/ ?;
