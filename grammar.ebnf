@@ -1,12 +1,16 @@
 statements = [ [statement-delimiter], statement, { statement-delimiter, [ statement ] } ];
 statement = expr | define;
+statement-delimiter = ? /(\n|;;)+/ ?;
 
 define-variable = "let", identifier, "=", expr;
-define-function = "let", identifier, ":", variables, function-expr | ( { function-clause, function-expr } );
+define-function = "let", identifier, ":", variables, function-expr;
 define = define-variable | define-function;
 
-function-clause = "|", "when", expr;
-function-expr = "->", expr;
+function-assign = "->", expr;
+function-clause = "when", expr, function-assign;
+function-expr = function-assign |
+                ( [ clause-delimiter ], function-clause, { clause-delimiter, function-clause } );
+clause-delimiter = [ "\n" ], "|";
 
 variables = identifier, { ",", identifier };
 
@@ -15,7 +19,8 @@ term = factor, [ ( "*" | "/" ), term ];
 factor = [ "-" ], par;
 par = ( "(", expr, ")" ) | number | identifier;
 
-expr-bool = expr, ( "=" | ">" | "<" | ">=" | "<=" | "!=" ), expr;
+bool-operator =  "=" | ">" | "<" | ">=" | "<=" | "!="; 
+expr-bool = expr, bool-operator, expr;
 
 expr = expr-calc | expr-bool;
 
@@ -25,6 +30,4 @@ number = number-int | number-point;
 
 identifier = ? /[a-zA-Z][a-zA-Z_]*/ ?;
 
-statement-delimiter = ? /(\n|;;)+/ ?;
-
-comment = ? /#.*\n/ ?
+comment = ? /#[^\n]*\n/ ?

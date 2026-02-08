@@ -28,16 +28,16 @@ fib(3) # prints 2
 You can oneline easily this script.
 Plank uses `;;` to separe two instructions.
 ```plank
-let x = 2;; 1+2
+let x = 2;; 1+x
 ```
 is equivalent to
 ```plank
 let x = 2
-1+2
+1+x
 ```
 You can also oneline functions!
 ```plank
-let fib: x | when x = 0 -> 0 | when x = 1 -> 1 | when x > 0 -> fib(x-1) + fib(x-2)
+let fib: x when x = 0 -> 0 | when x = 1 -> 1 | when x > 0 -> fib(x-1) + fib(x-2)
 ```
 
 ## Specification
