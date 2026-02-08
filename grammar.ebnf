@@ -25,6 +25,6 @@ number = number-int | number-point;
 
 identifier = ? /[a-zA-Z][a-zA-Z_]*/ ?;
 
-statement-delimiter = ? /\n+/ ? | ? /(;;)+/ ?;
+statement-delimiter = ? /(\n|;;)+/ ?;
 
 comment = ? /#.*\n/ ?
