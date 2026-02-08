@@ -14,8 +14,8 @@ clause-delimiter = [ "\n" ], "|";
 
 variables = identifier, { ",", identifier };
 
-expr-calc = term, [ ( "+" | "-" ) expr-calc ];
-term = factor, [ ( "*" | "/" ), term ];
+expr-calc = term, { ( "+" | "-" ) expr-calc };
+term = factor, { ( "*" | "/" ), term };
 factor = [ "-" ], par;
 par = ( "(", expr, ")" ) | number | identifier;
 
